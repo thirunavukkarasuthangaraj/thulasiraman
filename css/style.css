@@ -31,6 +31,7 @@
 
 html {
     scroll-behavior: smooth;
+    height: auto;
 }
 
 body {
@@ -38,10 +39,9 @@ body {
     background: var(--cream);
     color: var(--text-dark);
     line-height: 1.7;
-    overflow-x: hidden;
-    overflow-y: auto;
     padding-top: 50px;
     min-height: 100vh;
+    height: auto;
 }
 
 @media (max-width: 599px) {

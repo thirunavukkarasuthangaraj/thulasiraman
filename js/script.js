@@ -244,25 +244,57 @@ function speakTamil() {
 
     const fullText = tamilTexts.filter(t => t.trim()).join(' ');
 
-    // Use ResponsiveVoice for native Tamil voice
+    // Use Google Translate TTS for native Tamil voice
     isSpeaking = true;
     updateSpeakButton(true);
 
-    if (typeof responsiveVoice !== 'undefined') {
-        responsiveVoice.speak(fullText, "Tamil Female", {
-            rate: 0.9,
-            pitch: 1,
-            onend: function() {
-                isSpeaking = false;
-                updateSpeakButton(false);
-            },
-            onerror: function() {
-                fallbackToWebSpeech(fullText);
-            }
+    // Split text into chunks for Google TTS (max ~200 chars)
+    const chunks = [];
+    const sentences = fullText.split(/[.।]/);
+    let currentChunk = '';
+
+    sentences.forEach(sentence => {
+        sentence = sentence.trim();
+        if (!sentence) return;
+        if ((currentChunk + sentence).length < 180) {
+            currentChunk += sentence + '. ';
+        } else {
+            if (currentChunk) chunks.push(currentChunk.trim());
+            currentChunk = sentence + '. ';
+        }
+    });
+    if (currentChunk) chunks.push(currentChunk.trim());
+
+    let currentIndex = 0;
+    let audio = null;
+
+    function playChunk() {
+        if (currentIndex >= chunks.length || !isSpeaking) {
+            isSpeaking = false;
+            updateSpeakButton(false);
+            return;
+        }
+
+        const text = encodeURIComponent(chunks[currentIndex]);
+        audio = new Audio(`https://translate.google.com/translate_tts?ie=UTF-8&tl=ta&client=tw-ob&q=${text}`);
+
+        audio.onended = () => {
+            currentIndex++;
+            setTimeout(playChunk, 300); // Small pause between chunks
+        };
+
+        audio.onerror = () => {
+            currentIndex++;
+            playChunk();
+        };
+
+        audio.play().catch(() => {
+            // If Google TTS blocked, use Web Speech API
+            fallbackToWebSpeech(fullText);
         });
-    } else {
-        fallbackToWebSpeech(fullText);
     }
+
+    playChunk();
 }
 
 // Split text into smaller chunks
