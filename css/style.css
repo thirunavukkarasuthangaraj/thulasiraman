@@ -39,7 +39,13 @@ body {
     color: var(--text-dark);
     line-height: 1.7;
     overflow-x: hidden;
-    padding-top: 55px;
+    padding-top: 50px;
+}
+
+@media (max-width: 599px) {
+    body { padding-top: 45px; }
+    .village-name { font-size: 0.85rem; }
+    .header-content { padding: 10px 15px; }
 }
 
 .container {
@@ -53,48 +59,42 @@ body {
    STICKY HEADER TOOLBAR
    ======================================== */
 .header {
-    background: var(--navy);
-    padding: 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-    border-bottom: 3px solid var(--gold);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid var(--gold);
 }
 
 .header-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 12px 20px;
+    padding: 14px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .header-divider {
-    color: var(--gold);
-    font-size: 1.2rem;
-    opacity: 0.5;
+    display: none;
 }
 
 .village-name {
-    color: var(--white);
-    font-size: 1.1rem;
+    color: var(--gold);
+    font-size: 1rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     margin: 0;
+    text-align: center;
 }
 
 .village-name-en {
-    color: var(--gold);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 0;
+    display: none;
 }
 
 /* ========================================
@@ -823,8 +823,7 @@ body {
    RESPONSIVE - TABLET
    ======================================== */
 @media (min-width: 600px) {
-    .village-name { font-size: 1.3rem; }
-    .village-name-en { font-size: 0.8rem; letter-spacing: 3px; }
+    .village-name { font-size: 1.1rem; }
 
     .president-image {
         width: 300px;
@@ -847,9 +846,7 @@ body {
    RESPONSIVE - DESKTOP
    ======================================== */
 @media (min-width: 992px) {
-    .village-name { font-size: 1.5rem; }
-    .village-name-en { font-size: 0.85rem; letter-spacing: 4px; }
-    .header-content { gap: 20px; }
+    .village-name { font-size: 1.2rem; }
 
     .president-section { padding: 80px 20px; }
 
