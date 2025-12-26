@@ -39,7 +39,9 @@ body {
     color: var(--text-dark);
     line-height: 1.7;
     overflow-x: hidden;
+    overflow-y: auto;
     padding-top: 50px;
+    min-height: 100vh;
 }
 
 @media (max-width: 599px) {

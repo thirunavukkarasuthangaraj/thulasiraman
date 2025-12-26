@@ -244,44 +244,25 @@ function speakTamil() {
 
     const fullText = tamilTexts.filter(t => t.trim()).join(' ');
 
-    // Use Google Translate TTS for better Tamil voice
+    // Use ResponsiveVoice for native Tamil voice
     isSpeaking = true;
     updateSpeakButton(true);
 
-    // Split text into chunks (Google TTS has character limit)
-    const chunks = splitTextIntoChunks(fullText, 200);
-    let currentChunk = 0;
-    let audioElement = null;
-
-    function playNextChunk() {
-        if (currentChunk >= chunks.length || !isSpeaking) {
-            isSpeaking = false;
-            updateSpeakButton(false);
-            return;
-        }
-
-        const text = encodeURIComponent(chunks[currentChunk]);
-        const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&tl=ta&client=tw-ob&q=${text}`;
-
-        audioElement = new Audio(audioUrl);
-        audioElement.playbackRate = 0.9;
-
-        audioElement.onended = () => {
-            currentChunk++;
-            playNextChunk();
-        };
-
-        audioElement.onerror = () => {
-            // Fallback to Web Speech API if Google TTS fails
-            fallbackToWebSpeech(fullText);
-        };
-
-        audioElement.play().catch(() => {
-            fallbackToWebSpeech(fullText);
+    if (typeof responsiveVoice !== 'undefined') {
+        responsiveVoice.speak(fullText, "Tamil Female", {
+            rate: 0.9,
+            pitch: 1,
+            onend: function() {
+                isSpeaking = false;
+                updateSpeakButton(false);
+            },
+            onerror: function() {
+                fallbackToWebSpeech(fullText);
+            }
         });
+    } else {
+        fallbackToWebSpeech(fullText);
     }
-
-    playNextChunk();
 }
 
 // Split text into smaller chunks
