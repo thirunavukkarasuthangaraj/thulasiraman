@@ -1034,6 +1034,351 @@ body {
     .president-name { font-size: 4.5rem; }
 }
 
+/* ========================================
+   VISION & MISSION SECTION
+   ======================================== */
+.vision-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--cream), var(--white));
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.vision-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.vision-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--gold);
+}
+
+.vision-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--navy), var(--royal-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--gold);
+}
+
+.vision-icon svg {
+    width: 35px;
+    height: 35px;
+    fill: var(--gold);
+}
+
+.vision-card h3 {
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.vision-text-en {
+    font-size: 0.75rem;
+    color: var(--gold-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.vision-card p:last-child {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+@media (min-width: 600px) {
+    .vision-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .vision-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .vision-card {
+        padding: 40px 35px;
+    }
+}
+
+/* ========================================
+   ACHIEVEMENTS SECTION
+   ======================================== */
+.achievements-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%);
+}
+
+.achievements-section .section-title {
+    color: var(--white);
+}
+
+.achievements-section .section-subtitle {
+    color: var(--gold);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.achievement-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px 25px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.achievement-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.achievement-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-gold);
+}
+
+.achievement-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--navy);
+}
+
+.achievement-card h3 {
+    font-size: 1.2rem;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.achievement-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+}
+
+@media (min-width: 600px) {
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .achievements-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+
+    .achievement-card {
+        padding: 35px 25px;
+    }
+}
+
+/* ========================================
+   FUTURE PLANS SECTION
+   ======================================== */
+.future-section {
+    padding: 80px 0;
+    background: var(--cream);
+}
+
+.future-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.future-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: var(--shadow-soft);
+    border-left: 4px solid var(--gold);
+    transition: var(--transition);
+    position: relative;
+}
+
+.future-card:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.future-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: rgba(212, 175, 55, 0.3);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.future-card h3 {
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.future-card p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.7;
+    padding-right: 40px;
+}
+
+@media (min-width: 600px) {
+    .future-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .future-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+
+    .future-card {
+        padding: 35px 25px;
+    }
+}
+
+/* ========================================
+   MOBILE OPTIMIZATIONS
+   ======================================== */
+@media (max-width: 599px) {
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 35px;
+        letter-spacing: 2px;
+    }
+
+    .president-name {
+        font-size: 2.2rem;
+    }
+
+    .president-name-en {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .president-title {
+        padding: 12px 25px;
+        font-size: 0.8rem;
+    }
+
+    .president-about p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    .facility-card {
+        padding: 18px;
+    }
+
+    .facility-number {
+        font-size: 1.6rem;
+    }
+
+    .facility-label {
+        font-size: 0.85rem;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .slider-btn.prev { left: 10px; }
+    .slider-btn.next { right: 10px; }
+
+    .work-content {
+        padding: 20px;
+    }
+
+    .work-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .vision-card {
+        padding: 25px 20px;
+    }
+
+    .vision-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .achievement-card {
+        padding: 25px 20px;
+    }
+
+    .achievement-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .future-card {
+        padding: 25px 20px;
+    }
+
+    .future-number {
+        font-size: 2rem;
+    }
+
+    .future-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .future-card p {
+        padding-right: 30px;
+    }
+}
+
 /* Focus & Accessibility */
 button:focus {
     outline: 3px solid var(--gold);
