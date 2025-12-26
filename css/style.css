@@ -931,21 +931,230 @@ body {
 }
 
 .contact-note {
-    margin-top: 20px;
+    margin-top: 25px;
     color: var(--text-gray);
     font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Visiting Card Styles */
+.visiting-card {
+    max-width: 450px;
+    margin: 0 auto;
+    background: linear-gradient(145deg, var(--navy), var(--royal-blue));
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--gold);
+}
+
+.visiting-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 25px 15px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.card-logo {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.logo-tamil {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.card-village {
+    display: flex;
+    flex-direction: column;
+}
+
+.village-tamil {
+    color: var(--gold);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.village-en {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.card-body {
+    padding: 25px;
+    text-align: center;
+}
+
+.card-name {
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: linear-gradient(135deg, var(--white), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card-name-en {
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.card-title {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--navy);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.card-footer {
+    padding: 20px 25px 25px;
+}
+
+.card-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    padding: 15px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.card-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon svg {
+    width: 25px;
+    height: 25px;
+    fill: var(--white);
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-number {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.card-decoration {
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 @media (max-width: 599px) {
-    .whatsapp-btn {
-        padding: 15px 25px;
-        gap: 12px;
+    .visiting-card {
+        max-width: 100%;
+        border-radius: 16px;
     }
-    .whatsapp-icon {
-        width: 32px;
-        height: 32px;
+
+    .card-header {
+        padding: 20px 20px 12px;
     }
-    .whatsapp-number {
+
+    .card-logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-tamil {
+        font-size: 1.5rem;
+    }
+
+    .village-tamil {
+        font-size: 0.9rem;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-name {
+        font-size: 1.6rem;
+    }
+
+    .card-name-en {
+        font-size: 0.9rem;
+    }
+
+    .card-title {
+        font-size: 0.75rem;
+        padding: 8px 20px;
+    }
+
+    .card-footer {
+        padding: 15px 20px 20px;
+    }
+
+    .card-contact {
+        padding: 12px 15px;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-number {
         font-size: 1.1rem;
     }
 }
