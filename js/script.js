@@ -195,49 +195,130 @@ function speakTamil() {
         return;
     }
 
-    // Collect all Tamil text
+    // Collect all Tamil text - Complete website content
     const tamilTexts = [
-        "மரிமணிக்குப்பம் பஞ்சாயத்து தலைவர் துளசி ராமன் அவர்களின் இணையதளத்திற்கு வரவேற்கிறோம்.",
-        document.getElementById('tamil-text')?.textContent || '',
-        "மொத்த மக்கள் தொகை 6919. ஆண்கள் 3513. பெண்கள் 3406. குடும்பங்கள் 1729.",
+        // Welcome
+        "மரிமணிக்குப்பம் பஞ்சாயத்து இணையதளத்திற்கு வரவேற்கிறோம்.",
+
+        // President Info
+        "பஞ்சாயத்து தலைவர் துளசி ராமன்.",
+        document.getElementById('tamil-text')?.textContent || 'எங்கள் அன்பான மரிமணிக்குப்பம் பஞ்சாயத்தின் வளர்ச்சிக்காக முழு அர்ப்பணிப்புடன் பணியாற்றி வருகிறேன். மக்களின் நலனே எனது முதன்மையான குறிக்கோள். கடந்த காலத்தில் நாம் சேர்ந்து பல சாதனைகளை படைத்துள்ளோம்.',
+
+        // Census Statistics
+        "பஞ்சாயத்து விவரங்கள்.",
+        "மொத்த மக்கள் தொகை 6919.",
+        "ஆண்கள் 3513, அதாவது 50.8 சதவீதம்.",
+        "பெண்கள் 3406, அதாவது 49.2 சதவீதம்.",
+        "குடும்பங்கள் 1729.",
         "கல்வியறிவு விகிதம் 61.4 சதவீதம்.",
-        "பள்ளிக் கட்டடங்கள் 6. குடிநீர் இணைப்புகள் 354. கைக்குழாய்கள் 24. சாலைகள் 39.",
-        "தொடர்பு கொள்ள வாட்ஸ்அப் எண் 99444 16906."
+        "குழந்தைகள் 0 முதல் 6 வயது வரை 778 பேர்.",
+
+        // Facilities
+        "வசதிகள்.",
+        "பள்ளிக் கட்டடங்கள் 6.",
+        "குடிநீர் இணைப்புகள் 354.",
+        "கைக்குழாய்கள் 24.",
+        "சாலைகள் 39.",
+        "அரசு கட்டடங்கள் 8.",
+        "நீர்த்தேக்கத் தொட்டிகள் 17.",
+
+        // Sub-villages
+        "சிற்றூர்கள் 16.",
+        "தாடிக்காரன் வட்டம், ஓமகுப்பம் ஆ காலனி, ஆண்டல்வாடிநத்தம், எம் கிருஷ்ணாபுரம், ஓமகுப்பம் காலனி, தோட்டி சுட்டை, மரிமணிக்குப்பம், பூங்காவனம் முதலியார் வட்டம், ஏரிபள்ளம், தொட்டிகுட்டை, மாணிக்க கவுண்டர் வட்டம், நாகனேரி வட்டம், நீலிக்கொல்லை, ஓமகுப்பம், புதூர்.",
+
+        // Works
+        "நமது வளர்ச்சி பணிகள்.",
+        "சாலை மேம்பாடு. கிராமத்தின் அனைத்து முக்கிய தெருக்களிலும் புதிய தார் சாலைகள் அமைக்கப்பட்டுள்ளன.",
+        "குடிநீர் வசதி. அனைத்து வீடுகளுக்கும் சுத்தமான குடிநீர் இணைப்பு வழங்கப்பட்டுள்ளது.",
+        "தெரு விளக்குகள். சக்தி சிக்கனமான LED தெரு விளக்குகள் அனைத்து தெருக்களிலும் நிறுவப்பட்டுள்ளன.",
+        "கழிவு நீர் வடிகால். முறையான கழிவு நீர் வடிகால் அமைப்பு உருவாக்கப்பட்டுள்ளது.",
+        "கோவில் திருப்பணி. கிராம கோவில்களின் புனரமைப்பு பணிகள் வெற்றிகரமாக முடிக்கப்பட்டுள்ளன.",
+        "சமூக கூட்டரங்கம். கிராம நிகழ்வுகளுக்கான புதிய சமூக கூட்டரங்கம் கட்டப்பட்டுள்ளது.",
+
+        // Contact
+        "தொடர்பு கொள்ள வாட்ஸ்அப் எண் 99444 16906.",
+
+        // Thank you
+        "நன்றி. மரிமணிக்குப்பம் பஞ்சாயத்து."
     ];
 
-    const fullText = tamilTexts.filter(t => t.trim()).join('. ');
+    const fullText = tamilTexts.filter(t => t.trim()).join(' ');
 
-    // Create speech utterance
-    speechUtterance = new SpeechSynthesisUtterance(fullText);
-    speechUtterance.lang = 'ta-IN';
-    speechUtterance.rate = 0.9;
-    speechUtterance.pitch = 1;
+    // Use Google Translate TTS for better Tamil voice
+    isSpeaking = true;
+    updateSpeakButton(true);
 
-    // Find Tamil voice
-    const voices = window.speechSynthesis.getVoices();
-    const tamilVoice = voices.find(v => v.lang.includes('ta')) || voices.find(v => v.lang.includes('hi')) || voices[0];
-    if (tamilVoice) {
-        speechUtterance.voice = tamilVoice;
+    // Split text into chunks (Google TTS has character limit)
+    const chunks = splitTextIntoChunks(fullText, 200);
+    let currentChunk = 0;
+    let audioElement = null;
+
+    function playNextChunk() {
+        if (currentChunk >= chunks.length || !isSpeaking) {
+            isSpeaking = false;
+            updateSpeakButton(false);
+            return;
+        }
+
+        const text = encodeURIComponent(chunks[currentChunk]);
+        const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&tl=ta&client=tw-ob&q=${text}`;
+
+        audioElement = new Audio(audioUrl);
+        audioElement.playbackRate = 0.9;
+
+        audioElement.onended = () => {
+            currentChunk++;
+            playNextChunk();
+        };
+
+        audioElement.onerror = () => {
+            // Fallback to Web Speech API if Google TTS fails
+            fallbackToWebSpeech(fullText);
+        };
+
+        audioElement.play().catch(() => {
+            fallbackToWebSpeech(fullText);
+        });
     }
 
-    // Event handlers
-    speechUtterance.onstart = () => {
-        isSpeaking = true;
-        updateSpeakButton(true);
-    };
+    playNextChunk();
+}
 
-    speechUtterance.onend = () => {
+// Split text into smaller chunks
+function splitTextIntoChunks(text, maxLength) {
+    const chunks = [];
+    const sentences = text.split(/[.।,]/);
+    let currentChunk = '';
+
+    sentences.forEach(sentence => {
+        if ((currentChunk + sentence).length < maxLength) {
+            currentChunk += sentence + '. ';
+        } else {
+            if (currentChunk) chunks.push(currentChunk.trim());
+            currentChunk = sentence + '. ';
+        }
+    });
+    if (currentChunk) chunks.push(currentChunk.trim());
+
+    return chunks;
+}
+
+// Fallback to Web Speech API
+function fallbackToWebSpeech(text) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ta-IN';
+    utterance.rate = 0.85;
+
+    const voices = window.speechSynthesis.getVoices();
+    const tamilVoice = voices.find(v => v.lang.includes('ta'));
+    if (tamilVoice) utterance.voice = tamilVoice;
+
+    utterance.onend = () => {
         isSpeaking = false;
         updateSpeakButton(false);
     };
 
-    speechUtterance.onerror = () => {
-        isSpeaking = false;
-        updateSpeakButton(false);
-    };
-
-    // Start speaking
-    window.speechSynthesis.speak(speechUtterance);
+    window.speechSynthesis.speak(utterance);
 }
 
 function updateSpeakButton(speaking) {
