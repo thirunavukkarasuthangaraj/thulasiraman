@@ -1,5 +1,5 @@
 /**
- * மரிமணிக்குப்பம் - Village President Showcase
+ * மரிமாணிகுப்பம் - Village President Showcase
  * JavaScript for Slider and Interactions
  */
 

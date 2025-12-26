@@ -1,5 +1,5 @@
 # Robots.txt for thulasiraman.online
-# துளசி ராமன் - மரிமணிக்குப்பம் கிராம தலைவர்
+# துளசி ராமன் - மரிமாணிகுப்பம் கிராம தலைவர்
 
 User-agent: *
 Allow: /
