@@ -313,6 +313,9 @@ body {
     transform: translateX(-50%);
     text-align: center;
     animation: float 3s ease-in-out infinite;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 10;
 }
 
 .scroll-indicator span {
