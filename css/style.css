@@ -814,6 +814,85 @@ body {
 }
 
 /* ========================================
+   CONTACT SECTION
+   ======================================== */
+.contact-section {
+    padding: 80px 0;
+    background: var(--cream);
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: var(--white);
+    padding: 20px 40px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-icon {
+    width: 40px;
+    height: 40px;
+    fill: var(--white);
+}
+
+.whatsapp-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.whatsapp-label {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.whatsapp-number {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.contact-note {
+    margin-top: 20px;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 599px) {
+    .whatsapp-btn {
+        padding: 15px 25px;
+        gap: 12px;
+    }
+    .whatsapp-icon {
+        width: 32px;
+        height: 32px;
+    }
+    .whatsapp-number {
+        font-size: 1.1rem;
+    }
+}
+
+/* ========================================
    FOOTER
    ======================================== */
 .footer {
