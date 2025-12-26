@@ -367,6 +367,19 @@ body {
 .stat-card.households { background: linear-gradient(135deg, #1d4e4c, #2a6b69); }
 .stat-card.literacy { background: linear-gradient(135deg, #4a148c, #6a1b9a); }
 .stat-card.children { background: linear-gradient(135deg, #e65100, #f57c00); }
+.stat-card.voters { background: linear-gradient(135deg, #1565c0, #1976d2); }
+
+.census-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 15px 20px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid var(--gold);
+}
 
 .stat-icon {
     width: 60px;
