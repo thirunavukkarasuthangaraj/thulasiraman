@@ -178,3 +178,82 @@ document.addEventListener('keydown', (e) => {
         changeSlide(1);
     }
 });
+
+/**
+ * Tamil Text-to-Speech Function
+ * Speaks all Tamil text on the website
+ */
+let isSpeaking = false;
+let speechUtterance = null;
+
+function speakTamil() {
+    // If already speaking, stop
+    if (isSpeaking) {
+        window.speechSynthesis.cancel();
+        isSpeaking = false;
+        updateSpeakButton(false);
+        return;
+    }
+
+    // Collect all Tamil text
+    const tamilTexts = [
+        "மரிமணிக்குப்பம் பஞ்சாயத்து தலைவர் துளசி ராமன் அவர்களின் இணையதளத்திற்கு வரவேற்கிறோம்.",
+        document.getElementById('tamil-text')?.textContent || '',
+        "மொத்த மக்கள் தொகை 6919. ஆண்கள் 3513. பெண்கள் 3406. குடும்பங்கள் 1729.",
+        "கல்வியறிவு விகிதம் 61.4 சதவீதம்.",
+        "பள்ளிக் கட்டடங்கள் 6. குடிநீர் இணைப்புகள் 354. கைக்குழாய்கள் 24. சாலைகள் 39.",
+        "தொடர்பு கொள்ள வாட்ஸ்அப் எண் 99444 16906."
+    ];
+
+    const fullText = tamilTexts.filter(t => t.trim()).join('. ');
+
+    // Create speech utterance
+    speechUtterance = new SpeechSynthesisUtterance(fullText);
+    speechUtterance.lang = 'ta-IN';
+    speechUtterance.rate = 0.9;
+    speechUtterance.pitch = 1;
+
+    // Find Tamil voice
+    const voices = window.speechSynthesis.getVoices();
+    const tamilVoice = voices.find(v => v.lang.includes('ta')) || voices.find(v => v.lang.includes('hi')) || voices[0];
+    if (tamilVoice) {
+        speechUtterance.voice = tamilVoice;
+    }
+
+    // Event handlers
+    speechUtterance.onstart = () => {
+        isSpeaking = true;
+        updateSpeakButton(true);
+    };
+
+    speechUtterance.onend = () => {
+        isSpeaking = false;
+        updateSpeakButton(false);
+    };
+
+    speechUtterance.onerror = () => {
+        isSpeaking = false;
+        updateSpeakButton(false);
+    };
+
+    // Start speaking
+    window.speechSynthesis.speak(speechUtterance);
+}
+
+function updateSpeakButton(speaking) {
+    const btn = document.querySelector('.speak-btn');
+    if (btn) {
+        btn.classList.toggle('speaking', speaking);
+        const text = btn.querySelector('span');
+        if (text) {
+            text.textContent = speaking ? 'நிறுத்து' : 'கேளுங்கள்';
+        }
+    }
+}
+
+// Load voices when available
+if (window.speechSynthesis) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
