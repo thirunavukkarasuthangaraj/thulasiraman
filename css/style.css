@@ -43,9 +43,14 @@ body {
 }
 
 @media (max-width: 599px) {
-    body { padding-top: 45px; }
-    .village-name { font-size: 0.85rem; }
-    .header-content { padding: 10px 15px; }
+    body { padding-top: 42px; }
+    .header-content { padding: 10px 12px; }
+    .village-name {
+        font-size: 0.9rem;
+    }
+    .name-english {
+        display: none;
+    }
 }
 
 .container {
@@ -91,10 +96,21 @@ body {
     letter-spacing: 0.5px;
     margin: 0;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.village-name-en {
-    display: none;
+.name-tamil {
+    color: var(--gold);
+}
+
+.name-english {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8em;
+    font-weight: 500;
 }
 
 /* ========================================
