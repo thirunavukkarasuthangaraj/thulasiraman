@@ -1,0 +1,11 @@
+# Robots.txt for thulasiraman.online
+# துளசி ராமன் - மரிமணிக்குப்பம் கிராம தலைவர்
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://thulasiraman.online/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
