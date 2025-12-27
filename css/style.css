@@ -213,7 +213,7 @@ body {
 }
 
 .president-name {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 8px;
     background: linear-gradient(135deg, #ffd700, #ffec8b, #daa520, #ffd700);
@@ -221,7 +221,6 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.5));
-    white-space: nowrap;
 }
 
 .president-name-en {
