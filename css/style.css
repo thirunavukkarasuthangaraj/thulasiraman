@@ -551,7 +551,7 @@ body {
 
 .facility-label-en {
     font-size: 0.75rem;
-    color: var(--text-gray);
+    color: var(--white);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -896,10 +896,17 @@ body {
 
 .video-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    max-width: 800px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 100%;
     margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 .video-card {
@@ -908,6 +915,12 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow-heavy);
     border: 3px solid var(--gold);
+    transition: var(--transition);
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
 .video-wrapper {
@@ -927,12 +940,33 @@ body {
 }
 
 .video-title {
-    padding: 20px;
-    font-size: 1.1rem;
+    padding: 15px 20px 5px;
+    font-size: 1rem;
     color: var(--navy);
     font-weight: 600;
     text-align: center;
     background: var(--white);
+    margin: 0;
+}
+
+.video-date {
+    padding: 5px 20px 15px;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    text-align: center;
+    background: var(--white);
+    margin: 0;
+}
+
+.video-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    margin-top: 30px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid var(--gold);
 }
 
 /* ========================================
