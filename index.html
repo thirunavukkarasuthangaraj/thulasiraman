@@ -122,7 +122,7 @@
                             loading="eager">
                     </div>
                     <div class="president-info">
-                        <h2 class="president-name" itemprop="name">துளசி ராமன்</h2>
+                        <h2 class="president-name" itemprop="name">திரு துளசி ராமன்</h2>
                         <p class="president-name-en" itemprop="alternateName">Thulasi Raman</p>
                         <span class="president-title" itemprop="jobTitle">பஞ்சாயத்து தலைவர் / Panchayat President</span>
                         <div class="president-about" itemprop="description">
@@ -154,7 +154,16 @@
               <!-- Panchayat Census / Statistics Section -->
         <section class="census-section" id="census" aria-label="பஞ்சாயத்து புள்ளிவிவரங்கள்">
             <div class="container">
-                <h2 class="section-title">பஞ்சாயத்து விவரங்கள்</h2>
+
+                           <!-- Village Map -->
+                <div class="village-map-container">
+                    <h3 class="map-title">கிராம வரைபடம்</h3>
+                    <p class="map-subtitle">Village Map</p>
+                    <div class="map-wrapper">
+                        <img src="images/map.png" alt="மரிமாணிகுப்பம் கிராம வரைபடம் - Village Map" class="village-map" loading="lazy">
+                    </div>
+                </div>
+                <h2 class="section-title">பஞ்சாயத்து விவரங்கள்</h2> 
                 <p class="section-subtitle">Panchayat Statistics</p>
                 <p class="census-note">* மக்கள் தொகை புள்ளிவிவரம் 2011 கணக்கெடுப்பின் படி. புதிய மக்கள் தொகை கணக்கெடுப்பு விரைவில் கிராமத்தில் நடத்தப்படும்.</p>
 
@@ -243,15 +252,7 @@
                     </div>
                 </div>
 
-                <!-- Village Map -->
-                <div class="village-map-container">
-                    <h3 class="map-title">கிராம வரைபடம்</h3>
-                    <p class="map-subtitle">Village Map</p>
-                    <div class="map-wrapper">
-                        <img src="images/map.png" alt="மரிமாணிகுப்பம் கிராம வரைபடம் - Village Map" class="village-map" loading="lazy">
-                    </div>
-                </div>
-
+     
                 <!-- Facilities Grid -->
                 <div class="facilities-grid">
                     <div class="facility-card school">
@@ -323,6 +324,65 @@
             </div>
         </section>
         
+
+                <!-- Achievements Section -->
+        <section class="achievements-section" id="achievements" aria-label="சாதனைகள்">
+            <div class="container">
+                <h2 class="section-title">எங்கள் சாதனைகள்</h2>
+                <p class="section-subtitle">Our Achievements</p>
+
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
+                            </svg>
+                        </div>
+                        <h3>100% குடிநீர் வசதி</h3>
+                        <p>அனைத்து வீடுகளுக்கும் சுத்தமான குடிநீர் இணைப்பு வழங்கப்பட்டுள்ளது. தண்ணீர் பற்றாக்குறை என்ற
+                            பேச்சே இல்லை.</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
+                            </svg>
+                        </div>
+                        <h3>கல்வி மேம்பாடு</h3>
+                        <p>6 பள்ளிக் கட்டடங்கள் சீரமைக்கப்பட்டுள்ளன. மாணவர்களுக்கு இலவச பாடப் புத்தகங்கள் மற்றும்
+                            எழுதுபொருட்கள் வழங்கப்படுகின்றன.</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>
+                        </div>
+                        <h3>சுகாதாரம்</h3>
+                        <p>திறந்தவெளி கழிப்பறை இல்லாத கிராமம் என்ற பெருமையை அடைந்துள்ளோம். ஒவ்வொரு வீட்டிலும் கழிவறை
+                            கட்டப்பட்டுள்ளது.</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                        </div>
+                        <h3>அரசு திட்டங்கள்</h3>
+                        <p>அனைத்து அரசு திட்டங்களும் தகுதியான குடும்பங்களுக்கு சென்றடைகின்றன. ஓய்வூதியம், ரேஷன் அட்டை,
+                            வீட்டுமனை பட்டா என அனைத்தும் வழங்கப்படுகின்றன.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
 
         <!-- Village Intro Video Section -->
         <section class="intro-video-section" id="intro-video" aria-label="கிராம அறிமுக காணொளி">
@@ -645,62 +705,6 @@
             </div>
         </section>
 
-        <!-- Achievements Section -->
-        <section class="achievements-section" id="achievements" aria-label="சாதனைகள்">
-            <div class="container">
-                <h2 class="section-title">எங்கள் சாதனைகள்</h2>
-                <p class="section-subtitle">Our Achievements</p>
-
-                <div class="achievements-grid">
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
-                            </svg>
-                        </div>
-                        <h3>100% குடிநீர் வசதி</h3>
-                        <p>அனைத்து வீடுகளுக்கும் சுத்தமான குடிநீர் இணைப்பு வழங்கப்பட்டுள்ளது. தண்ணீர் பற்றாக்குறை என்ற
-                            பேச்சே இல்லை.</p>
-                    </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
-                            </svg>
-                        </div>
-                        <h3>கல்வி மேம்பாடு</h3>
-                        <p>6 பள்ளிக் கட்டடங்கள் சீரமைக்கப்பட்டுள்ளன. மாணவர்களுக்கு இலவச பாடப் புத்தகங்கள் மற்றும்
-                            எழுதுபொருட்கள் வழங்கப்படுகின்றன.</p>
-                    </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                            </svg>
-                        </div>
-                        <h3>சுகாதாரம்</h3>
-                        <p>திறந்தவெளி கழிப்பறை இல்லாத கிராமம் என்ற பெருமையை அடைந்துள்ளோம். ஒவ்வொரு வீட்டிலும் கழிவறை
-                            கட்டப்பட்டுள்ளது.</p>
-                    </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg>
-                        </div>
-                        <h3>அரசு திட்டங்கள்</h3>
-                        <p>அனைத்து அரசு திட்டங்களும் தகுதியான குடும்பங்களுக்கு சென்றடைகின்றன. ஓய்வூதியம், ரேஷன் அட்டை,
-                            வீட்டுமனை பட்டா என அனைத்தும் வழங்கப்படுகின்றன.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Future Plans Section -->
         <section class="future-section" id="future" aria-label="எதிர்கால திட்டங்கள்">
