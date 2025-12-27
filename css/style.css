@@ -213,26 +213,19 @@ body {
 }
 
 .president-name {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 8px;
-    background: linear-gradient(135deg, #ffd700, #ffec8b, #daa520, #ffd700);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.5));
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .president-name-en {
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 25px;
-    background: linear-gradient(135deg, #ffd700, #ffec8b, #daa520);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--gold);
     letter-spacing: 3px;
-    filter: drop-shadow(0 1px 2px rgba(212, 175, 55, 0.4));
 }
 
 /* Elite Title Badge */
