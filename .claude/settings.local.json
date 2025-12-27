@@ -9,7 +9,9 @@
       "Bash(git init:*)",
       "Bash(git branch:*)",
       "Bash(git remote add:*)",
-      "Bash(dir /b:*)"
+      "Bash(dir /b:*)",
+      "Bash(curl:*)",
+      "Bash(dir:*)"
     ]
   }
 }
