@@ -8,7 +8,7 @@ let currentSlide = 0;
 let slides;
 let dots;
 let slideInterval;
-const SLIDE_DURATION = 5000; // 5 seconds auto-slide
+const SLIDE_DURATION = 3000; // 3 seconds auto-slide
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
