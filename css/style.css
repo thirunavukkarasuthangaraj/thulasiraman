@@ -1651,9 +1651,22 @@ body {
         font-size: 0.8rem;
     }
 
+    .president-info {
+        text-align: left;
+    }
+
+    .president-about {
+        text-align: left;
+    }
+
     .president-about p {
         font-size: 0.95rem;
         line-height: 1.8;
+        text-align: left;
+    }
+
+    .achievement-list {
+        text-align: left;
     }
 
     .stat-number {
