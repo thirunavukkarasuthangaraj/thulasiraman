@@ -1,0 +1,8 @@
+/* Hide Site - Remove or comment out the link in index.html to show the site */
+html {
+    background: #000 !important;
+}
+
+body {
+    display: none !important;
+}
